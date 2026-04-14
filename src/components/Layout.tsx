@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Cpu, Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
+import logo from '../assets/logo.png';
 
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,11 +43,11 @@ export default function Layout() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className={`bg-linear-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-all duration-500 ${scrolled ? 'w-10 h-10' : 'w-12 h-12'}`}>
-                <Cpu className={`text-white transition-all duration-500 ${scrolled ? 'w-5 h-5' : 'w-7 h-7'}`} />
+            <Link to="/" className="flex items-center gap-0 group">
+              <div className={`overflow-hidden flex items-center justify-center transition-all duration-500 translate-y-3 ${scrolled ? 'w-24 h-24' : 'w-48 h-48'}`}>
+                <img src={logo} alt={t('app.name')} className="w-full h-full object-contain" />
               </div>
-              <span className={`font-black bg-clip-text text-transparent bg-linear-to-r from-blue-800 to-blue-500 transition-all duration-500 ${scrolled ? 'text-xl' : 'text-2xl drop-shadow-sm'}`}>
+              <span className={`font-black bg-clip-text text-transparent bg-linear-to-r from-blue-800 to-blue-500 tracking-tight transition-all duration-500 -ms-12 ${scrolled ? 'text-2xl' : 'text-4xl'}`}>
                 {t('app.name')}
               </span>
             </Link>
@@ -135,11 +136,11 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-linear-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
-                  <Cpu className="w-6 h-6 text-white" />
+              <div className="flex items-center gap-0 mb-6">
+                <div className="w-48 h-48 overflow-hidden flex items-center justify-center translate-y-3">
+                  <img src={logo} alt={t('app.name')} className="w-full h-full object-contain filter brightness-0 invert opacity-90" />
                 </div>
-                <span className="text-2xl font-bold text-white">{t('app.name')}</span>
+                <span className="text-4xl font-bold text-white tracking-tight -ms-12">{t('app.name')}</span>
               </div>
               <p className="text-slate-400 leading-relaxed max-w-md">
                 {t('footer.desc')}
@@ -157,8 +158,8 @@ export default function Layout() {
             <div>
               <h4 className="text-white font-bold text-lg mb-6">{t('footer.contactUs')}</h4>
               <ul className="space-y-3 text-slate-400">
-                <li>{t('contact.phone.title')}: <span dir="ltr" className="inline-block">+964 771 756 1608</span></li>
-                <li>info@arab-leopard.iq</li>
+                <li>{t('contact.phone.title')}: <span dir="ltr" className="inline-block">{t('contact.phone.value')}</span></li>
+                <li>{t('contact.email.value')}</li>
                 <li>{t('footer.address')}</li>
               </ul>
             </div>
