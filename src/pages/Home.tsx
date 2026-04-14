@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -38,7 +38,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -71,22 +71,22 @@ export default function Home() {
                 </Link>
               </motion.div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 1, type: "spring", bounce: 0.4 }}
               className="relative hidden lg:block"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-white/50 bg-white p-2">
-                <img 
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Technology Solutions" 
+                <img
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+                  alt="Technology Solutions"
                   className="rounded-2xl w-full object-cover aspect-[4/3]"
                   referrerPolicy="no-referrer"
                 />
                 {/* Floating Badge */}
-                <motion.div 
+                <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
                   className="absolute -bottom-6 -start-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4"
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -141,7 +141,7 @@ export default function Home() {
               { icon: <Server />, title: t('home.feat2.title'), desc: t('home.feat2.desc') },
               { icon: <Sun />, title: t('home.feat3.title'), desc: t('home.feat3.desc') }
             ].map((feature, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

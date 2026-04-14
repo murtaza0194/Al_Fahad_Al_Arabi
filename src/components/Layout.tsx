@@ -43,11 +43,11 @@ export default function Layout() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center gap-0 group">
-              <div className={`overflow-hidden flex items-center justify-center transition-all duration-500 translate-y-3 ${scrolled ? 'w-24 h-24' : 'w-48 h-48'}`}>
-                <img src={logo} alt={t('app.name')} className="w-full h-full object-contain" />
+            <Link to="/" className="flex items-center gap-0 group shrink-0">
+              <div className={`flex items-center justify-center transition-all duration-500 translate-y-2 sm:translate-y-3 ${scrolled ? 'w-20 h-20 sm:w-24 sm:h-24' : 'w-32 h-32 sm:w-48 sm:h-48'}`}>
+                <img src={logo} alt={t('app.name')} className="h-full w-auto object-contain" />
               </div>
-              <span className={`font-black bg-clip-text text-transparent bg-linear-to-r from-blue-800 to-blue-500 tracking-tight transition-all duration-500 -ms-12 ${scrolled ? 'text-2xl' : 'text-4xl'}`}>
+              <span className={`font-black bg-clip-text text-transparent bg-linear-to-r from-blue-800 to-blue-500 tracking-tight transition-all duration-500 -ms-8 sm:-ms-12 ${scrolled ? 'text-lg sm:text-2xl' : 'text-xl sm:text-4xl'}`}>
                 {t('app.name')}
               </span>
             </Link>
@@ -137,10 +137,10 @@ export default function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-0 mb-6">
-                <div className="w-48 h-48 overflow-hidden flex items-center justify-center translate-y-3">
-                  <img src={logo} alt={t('app.name')} className="w-full h-full object-contain filter brightness-0 invert opacity-90" />
+                <div className="w-32 h-32 sm:w-48 sm:h-48 flex items-center justify-center translate-y-3">
+                  <img src={logo} alt={t('app.name')} className="h-full w-auto object-contain filter brightness-0 invert opacity-90" />
                 </div>
-                <span className="text-4xl font-bold text-white tracking-tight -ms-12">{t('app.name')}</span>
+                <span className="text-2xl sm:text-4xl font-bold text-white tracking-tight -ms-8 sm:-ms-12">{t('app.name')}</span>
               </div>
               <p className="text-slate-400 leading-relaxed max-w-md">
                 {t('footer.desc')}
